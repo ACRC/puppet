@@ -4,9 +4,5 @@ class role::base {
 }
 
 class role::puppetmaster {
-    class { '::puppet':
-        server  => true,
-        server_reports        => 'store',
-        server_external_nodes => '',
-    }
+    include acrc_puppet::master
 }

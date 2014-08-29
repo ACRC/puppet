@@ -1,0 +1,16 @@
+{
+  "name": "jgazeley/selinux",
+  "version": "0.1.1",
+  "author": "jgazeley",
+  "summary": "This class manages SELinux on RHEL based systems",
+  "license": "Apache 2.0",
+  "source": "https://github.com/djjudas21/puppet-selinux",
+  "project_page": "https://github.com/djjudas21/puppet-selinux",
+  "issues_url": "https://github.com/djjudas21/puppet-selinux/issues",
+  "dependencies": [
+    {
+      "name": "puppetlabs-stdlib",
+      "version_range": ">= 1.0.0"
+    }
+  ]
+}

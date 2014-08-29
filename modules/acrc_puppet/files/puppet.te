@@ -1,0 +1,53 @@
+module resnet-puppet 1.2;
+
+require {
+        type devpts_t;
+        type home_root_t;
+        type locale_t;
+        type transproxy_port_t;
+        type ifconfig_exec_t;
+        type passenger_tmp_t;
+        type httpd_t;
+        type port_t;
+        type puppet_var_lib_t;
+        type sysctl_net_t;
+        type passenger_t;
+        type proc_net_t;
+        type iptables_exec_t;
+        type user_home_dir_t;
+        type user_home_t;
+        type mysqld_port_t;
+        type puppet_log_t;
+        type puppet_var_lib_t;
+
+        class sock_file write;
+        class tcp_socket { name_connect listen };
+        class file { execute read execute_no_trans getattr open setattr };
+        class dir { search create rmdir read open getattr setattr };
+        class udp_socket name_bind;
+        class lnk_file read;
+}
+
+#============= httpd_t ==============
+allow httpd_t passenger_tmp_t:sock_file write;
+
+#============= passenger_t ==============
+allow passenger_t devpts_t:dir search;
+allow passenger_t home_root_t:dir search;
+allow passenger_t user_home_t:dir { search getattr };
+allow passenger_t user_home_t:file { read getattr open };
+allow passenger_t ifconfig_exec_t:file { read getattr open execute execute_no_trans };
+allow passenger_t locale_t:file { read getattr open };
+allow passenger_t proc_net_t:file { read getattr open };
+allow passenger_t puppet_var_lib_t:dir { create rmdir };
+allow passenger_t sysctl_net_t:dir search;
+allow passenger_t transproxy_port_t:tcp_socket name_connect;
+allow passenger_t iptables_exec_t:file { read getattr open execute execute_no_trans };
+allow passenger_t locale_t:dir search;
+allow passenger_t user_home_dir_t:dir search;
+allow passenger_t user_home_t:dir { read search open getattr };
+allow passenger_t user_home_t:file { read getattr open };
+allow passenger_t user_home_t:lnk_file read;
+allow passenger_t mysqld_port_t:tcp_socket name_connect;
+allow passenger_t puppet_log_t: file setattr;
+allow passenger_t puppet_var_lib_t:dir setattr;

@@ -1,0 +1,17 @@
+{
+  "name": "acrc-puppetmaster",
+  "version": "0.1.0",
+  "author": "Dan Foster",
+  "summary": "Installing puppet on ACRC machines",
+  "license": "Apache 2.0",
+  "source": "",
+  "issues_url": null,
+  "project_page": null,
+  "dependencies": [
+    {
+      "version_range": ">= 1.0.0",
+      "name": "puppetlabs-stdlib"
+    }
+  ]
+}
+
