@@ -1,8 +1,8 @@
-class motd {
+class motd($text = "") {
 
     file { 'motd':
         path    => '/etc/motd',
         ensure  => file,
-        content => template("motd/motd.erb"),
+        content => $text, 
     }
 }
