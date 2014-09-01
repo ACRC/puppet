@@ -6,4 +6,5 @@ class role::base {
 class role::puppetmaster {
     include acrc_puppet::master
     include foreman
+    include foreman_proxy
 }
