@@ -16,4 +16,16 @@ class acrc_puppet::master {
         proto   => tcp,
         action  => accept,
     }
+
+
+    firewall { '050 accept web':
+        port    => [80, 443],
+        proto   => tcp,
+        action  => accept,
+    }
+
+    file { '/etc/puppet/hiera.yaml':
+        ensure => file,
+        source => 'puppet:///modules/acrc_puppet/hiera.yaml',
+    }
 }
