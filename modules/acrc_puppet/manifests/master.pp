@@ -10,4 +10,10 @@ class acrc_puppet::master {
         ensure => 'present',
         source => 'puppet:///modules/acrc_puppet/puppet.te',
     }
+
+    firewall { '050 accept Puppet':
+        port    => 8140,
+        proto   => tcp,
+        action  => accept,
+    }
 }
