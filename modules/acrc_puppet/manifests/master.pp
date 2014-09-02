@@ -22,6 +22,13 @@ class acrc_puppet::master {
         action  => accept,
     }
 
+
+    firewall { '050 accept tftp':
+        port    => 69,
+        proto   => udp,
+        action  => accept,
+    }
+
     file { '/etc/puppet/hiera.yaml':
         ensure => file,
         source => 'puppet:///modules/acrc_puppet/hiera.yaml',
