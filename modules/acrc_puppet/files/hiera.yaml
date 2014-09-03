@@ -6,5 +6,6 @@
 :hierarchy:
   - hosts/%{fqdn}
   - os/%{osfamily}
+  - acrc
   - uob
 

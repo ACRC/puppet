@@ -3,4 +3,5 @@ class role::base {
     include motd
     include puppet
     include acrc_ssh
+    include acrc_users
 }
