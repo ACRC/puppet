@@ -1,0 +1,13 @@
+{
+  "CHANGELOG": "bbe3a95c9419ba99beaa6e47ab490f27",
+  "LICENSE": "4288b51e2b98e8da173a37b042060eaf",
+  "README.md": "cbc5758617995b9a22938dafc85b1842",
+  "Rakefile": "b15c7beaebf37c3c5adaf59e6027785f",
+  "manifests/init.pp": "62f003edfcd2fbaef47c97c04fc90670",
+  "manifests/params.pp": "b55abc988dd0ed79ec187a5171a222d3",
+  "metadata.json": "e8d0b57e1198e151744e8f17475a8da1",
+  "puppet-authconfig.spec": "f04be8aea6dcb4c8a74b5ae0069b95e6",
+  "spec/classes/authconfig_spec.rb": "b0b9a796d95b64aeab15d2b7ae7b959b",
+  "spec/spec_helper.rb": "792eeb7aa7edafb93e2bc1d27c5e75c5",
+  "tests/init.pp": "d77d1bbf51b01cdf21f9de9a3c102348"
+}

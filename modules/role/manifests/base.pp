@@ -4,4 +4,5 @@ class role::base {
     include puppet
     include acrc_ssh
     include acrc_users
+    include authconfig
 }
