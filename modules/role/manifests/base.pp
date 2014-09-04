@@ -5,4 +5,5 @@ class role::base {
     include acrc_ssh
     include acrc_users
     include authconfig
+    include sudo
 }
