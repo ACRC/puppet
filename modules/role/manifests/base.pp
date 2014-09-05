@@ -6,4 +6,5 @@ class role::base {
     include acrc_users
     include authconfig
     include sudo
+    include exim
 }
