@@ -8,4 +8,5 @@ class role::base {
     include sudo
     include exim
     include ntp
+    include acrc_repos
 }
