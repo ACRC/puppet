@@ -7,4 +7,5 @@ class role::base {
     include authconfig
     include sudo
     include exim
+    include ntp
 }
