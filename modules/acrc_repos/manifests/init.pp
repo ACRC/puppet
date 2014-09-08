@@ -4,5 +4,19 @@ class acrc_repos {
     if $yumrepos {
         create_resources('yumrepo', $yumrepos)
     }
+
+    if $osfamily == 'RedHat' {
+        package { 'yum-cron':
+            ensure => present,
+        }
+
+        service { 'yum-cron':
+            ensure     => running,
+            hasstatus  => true,
+            hasrestart => true,
+            require    => Package['yum-cron'],
+        }
+
+    }
     
 }
