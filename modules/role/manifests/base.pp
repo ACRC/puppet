@@ -9,4 +9,5 @@ class role::base {
     include exim
     include ntp
     include acrc_repos
+    include uob_networker
 }
