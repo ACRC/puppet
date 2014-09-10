@@ -37,25 +37,25 @@ ${shortserver}
   exec { '/usr/bin/nsrports -s $server -S $service_ports':
     refreshonly => true,
     subscribe   => Package['lgtoclnt'],
-    require     => Package['lgtoclnt'],
+    require     => Service['networker'],
   }
 
   exec { '/usr/bin/nsrports -S $service_ports':
     refreshonly => true,
     subscribe   => Package['lgtoclnt'],
-    require     => Package['lgtoclnt'],
+    require     => Service['networker'],
   }
 
   exec { '/usr/bin/nsrports -s $server -C $connection_ports':
     refreshonly => true,
     subscribe   => Package['lgtoclnt'],
-    require     => Package['lgtoclnt'],
+    require     => Service['networker'],
   }
 
   exec { '/usr/bin/nsrports -C $connection_ports':
     refreshonly => true,
     subscribe   => Package['lgtoclnt'],
-    require     => Package['lgtoclnt'],
+    require     => Service['networker'],
   }
 
   firewall {'050 allow central backups service ports':
