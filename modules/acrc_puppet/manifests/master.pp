@@ -1,9 +1,5 @@
 
 class acrc_puppet::master {
-    class { '::puppet':
-        server  => true,
-    }
-
     selinux::module { 'puppet':
         ensure => 'present',
         source => 'puppet:///modules/acrc_puppet/puppet.te',
