@@ -1,8 +1,8 @@
-class motd($text = "") {
+class motd($text = '') {
 
     file { 'motd':
-        path    => '/etc/motd',
         ensure  => file,
-        content => $text, 
+        path    => '/etc/motd',
+        content => $text,
     }
 }

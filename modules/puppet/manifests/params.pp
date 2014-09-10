@@ -24,7 +24,7 @@ class puppet::params {
   $dns_alt_names       = []
   $use_srv_records     = false
   $srv_domain          = $::domain
-  $pluginsource        = 'puppet:///plugins'
+  $pluginsource        = 'puppet:///plugins' # lint:ignore:puppet_url_without_modules
   $classfile           = '$vardir/classes.txt'
   $hiera_config        = '$confdir/hiera.yaml'
 

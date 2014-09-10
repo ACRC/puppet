@@ -22,15 +22,15 @@ define postgresql::validate_db_connection(
   $cmd_init = "${psql_path} --tuples-only --quiet "
   $cmd_host = $database_host ? {
     default => "-h ${database_host} ",
-    undef   => "",
+    undef   => '',
   }
   $cmd_user = $database_username ? {
     default => "-U ${database_username} ",
-    undef   => "",
+    undef   => '',
   }
   $cmd_port = $database_port ? {
     default => "-p ${database_port} ",
-    undef   => "",
+    undef   => '',
   }
   $cmd_dbname = $database_name ? {
     default => "--dbname ${database_name} ",

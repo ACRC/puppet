@@ -4,7 +4,7 @@ class exim (
     $local_interfaces = $exim::params::local_interfaces,
     $root = $exim::params::root,
 ) inherits exim::params {
-   
+
     package { 'postfix':
         ensure => absent
     }
@@ -18,11 +18,11 @@ class exim (
     }
 
     file { '/etc/exim/exim.conf':
-        content => template("exim/exim.conf.erb"),
+        content => template('exim/exim.conf.erb'),
         notify => Service[exim]
     }
 
     file { '/etc/aliases':
-        content => template("exim/aliases.erb")
+        content => template('exim/aliases.erb')
     }
 }

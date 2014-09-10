@@ -26,7 +26,7 @@ class firewall::linux::redhat (
     }
   }
 
-  if ($::operatingsystem == 'Fedora' and (( $::operatingsystemrelease =~ /^\d+/ and $::operatingsystemrelease >= 15 ) or $::operatingsystemrelease == "Rawhide")) {
+  if ($::operatingsystem == 'Fedora' and (( $::operatingsystemrelease =~ /^\d+/ and $::operatingsystemrelease >= 15 ) or $::operatingsystemrelease == 'Rawhide')) {
     package { 'iptables-services':
       ensure => present,
     }

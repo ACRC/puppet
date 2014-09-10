@@ -18,12 +18,12 @@ class postgresql::client (
     false     => 'absent',
     default   => 'file',
   }
-  file { "/usr/local/bin/validate_postgresql_connection.sh":
+  file { '/usr/local/bin/validate_postgresql_connection.sh':
     ensure => $file_ensure,
-    source => "puppet:///modules/postgresql/validate_postgresql_connection.sh",
+    source => 'puppet:///modules/postgresql/validate_postgresql_connection.sh',
     owner  => 0,
     group  => 0,
-    mode   => 0755,
+    mode   => '0755',
   }
 
 }

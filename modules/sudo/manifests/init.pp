@@ -128,7 +128,7 @@ class sudo(
   if $config_file_replace == false and $::osfamily == 'RedHat' and $::operatingsystemmajrelease == '5' {
     augeas { 'includedirsudoers':
       changes => ['set /files/etc/sudoers/#includedir /etc/sudoers.d'],
-      incl => "$config_file",
+      incl => $config_file,
       lens => 'FixedSudoers.lns',
     }
   }

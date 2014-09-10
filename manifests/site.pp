@@ -9,6 +9,6 @@ if versioncmp($::puppetversion,'3.6.1') >= 0 {
 
 hiera_include('classes')
 
-resources { "firewall":
+resources { 'firewall':
     purge => true
 }

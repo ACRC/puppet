@@ -11,9 +11,9 @@ class apt::params {
         'squeeze': {
           $backports_location = 'http://backports.debian.org/debian-backports'
           $legacy_origin       = true
-          $origins             = ['${distro_id} oldstable',
-                                  '${distro_id} ${distro_codename}-security',
-                                  '${distro_id} ${distro_codename}-lts']
+          $origins             = ["${distro_id} oldstable",
+                                  "${distro_id} ${distro_codename}-security",
+                                  "${distro_id} ${distro_codename}-lts"]
         }
         'wheezy': {
           $backports_location = 'http://ftp.debian.org/debian/'
@@ -33,19 +33,19 @@ class apt::params {
           $backports_location = 'http://us.archive.ubuntu.com/ubuntu'
           $ppa_options        = undef
           $legacy_origin      = true
-          $origins            = ['${distro_id} ${distro_codename}-security']
+          $origins            = ["${distro_id} ${distro_codename}-security"]
         }
         'precise', 'trusty': {
           $backports_location = 'http://us.archive.ubuntu.com/ubuntu'
           $ppa_options        = '-y'
           $legacy_origin      = true
-          $origins            = ['${distro_id}:${distro_codename}-security']
+          $origins            = ["${distro_id}:${distro_codename}-security"]
         }
         default: {
           $backports_location = 'http://old-releases.ubuntu.com/ubuntu'
           $ppa_options        = '-y'
           $legacy_origin      = true
-          $origins            = ['${distro_id}:${distro_codename}-security']
+          $origins            = ["${distro_id}:${distro_codename}-security"]
         }
       }
     }

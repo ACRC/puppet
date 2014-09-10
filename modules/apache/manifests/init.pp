@@ -223,7 +223,7 @@ class apache (
     case $::osfamily {
       'debian': {
         $docroot              = '/var/www'
-        $pidfile              = '${APACHE_PID_FILE}'
+        $pidfile              = '${APACHE_PID_FILE}' # lint:ignore:single_quote_string_with_variables
         $error_log            = 'error.log'
         $error_documents_path = '/usr/share/apache2/error'
         $scriptalias          = '/usr/lib/cgi-bin'

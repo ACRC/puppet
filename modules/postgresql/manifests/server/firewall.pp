@@ -7,13 +7,13 @@ class postgresql::server::firewall {
 
   if ($manage_firewall and $firewall_supported) {
     if ($ensure == 'present' or $ensure == true) {
-      firewall { "$port accept - postgres":
+      firewall { "${port} accept - postgres":
         port   => $port,
         proto  => 'tcp',
         action => 'accept',
       }
     } else {
-      firewall { "$port accept - postgres":
+      firewall { "${port} accept - postgres":
         ensure => absent,
       }
     }

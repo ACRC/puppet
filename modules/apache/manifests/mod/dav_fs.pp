@@ -1,6 +1,6 @@
 class apache::mod::dav_fs {
   $dav_lock = $::osfamily ? {
-    'debian'  => '${APACHE_LOCK_DIR}/DAVLock',
+    'debian'  => '${APACHE_LOCK_DIR}/DAVLock', # lint:ignore:single_quote_string_with_variables
     'freebsd' => '/usr/local/var/DavLock',
     default   => '/var/lib/dav/lockdb',
   }
