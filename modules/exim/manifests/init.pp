@@ -18,8 +18,10 @@ class exim (
     }
 
     file { '/etc/exim/exim.conf':
+        ensure => 'present',
         content => template('exim/exim.conf.erb'),
-        notify => Service[exim]
+        notify => Service[exim],
+        require => Package['exim'],
     }
 
     file { '/etc/aliases':
