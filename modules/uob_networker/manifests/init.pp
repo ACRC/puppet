@@ -34,25 +34,25 @@ ${shortserver}
     require => Package['lgtoclnt']
   }
 
-  exec { '/usr/bin/nsrports -s $server -S $service_ports':
+  exec { "/usr/bin/nsrports -s $server -S ${service_ports}":
     refreshonly => true,
     subscribe   => Package['lgtoclnt'],
     require     => Service['networker'],
   }
 
-  exec { '/usr/bin/nsrports -S $service_ports':
+  exec { "/usr/bin/nsrports -S ${service_ports}":
     refreshonly => true,
     subscribe   => Package['lgtoclnt'],
     require     => Service['networker'],
   }
 
-  exec { '/usr/bin/nsrports -s $server -C $connection_ports':
+  exec { "/usr/bin/nsrports -s $server -C ${connection_ports}":
     refreshonly => true,
     subscribe   => Package['lgtoclnt'],
     require     => Service['networker'],
   }
 
-  exec { '/usr/bin/nsrports -C $connection_ports':
+  exec { "/usr/bin/nsrports -C ${connection_ports}":
     refreshonly => true,
     subscribe   => Package['lgtoclnt'],
     require     => Service['networker'],
