@@ -29,4 +29,20 @@ class acrc_puppet::master {
         ensure => file,
         source => 'puppet:///modules/acrc_puppet/hiera.yaml',
     }
+
+    package { 'githubhooks':
+        ensure => 'present',
+    }
+
+    file { '/etc/githubhooks':
+	ensure => file,
+	source => 'puppet:///modules/acrc_puppet/githubhooks',
+    }
+
+
+    firewall { '050 accept githubhooks':
+        port    => 5000,
+        proto   => tcp,
+        action  => accept,
+    }
 }

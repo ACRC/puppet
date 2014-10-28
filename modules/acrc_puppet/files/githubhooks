@@ -1,0 +1,11 @@
+{
+  "repos": {
+    "ACRC/puppet": {
+      "refs/heads/master": {
+        "action": "gitpull",
+        "repodir": "/etc/puppet/environments/acrc_staging"
+      }
+    }
+  },
+  "secret": "N&4H3oBCg%nL9l%C"
+}
