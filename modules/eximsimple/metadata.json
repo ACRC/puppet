@@ -1,0 +1,15 @@
+{
+  "name": "danfoster-eximsimple",
+  "version": "0.1.0",
+  "author": "Dan Foster",
+  "summary": "A simple module to configure exim to route mail via a smarthost.",
+  "license": "Apache 2.0",
+  "source": "http://github.com/danfoster/puppet-eximsimple",
+  "project_page": "https://github.com/danfoster/puppet-eximsimple",
+  "issues_url": "https://github.com/danfoster/puppet-eximsimple/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"},
+    {"name":"stahnma-epel","version_requirement":">= 1.0.0"}
+  ]
+}
+

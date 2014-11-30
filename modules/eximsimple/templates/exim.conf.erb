@@ -1,0 +1,34 @@
+qualify_domain = <%= @domain %>
+never_users = root
+deliver_drop_privilege = true
+local_interfaces = <%= local_interfaces %>
+ignore_bounce_errors_after = 2d
+
+acl_smtp_connect = acl_check_connection
+
+begin acl
+
+acl_check_connection:
+    accept hosts = <%= local_interfaces %>
+    drop message = You are not permitted to connect to this service
+
+begin routers
+
+aliasRewrites:
+    driver = redirect
+    domains = <%= @domain %>
+    data = ${lookup{$local_part}lsearch{/etc/aliases}}
+
+smartHosts:
+    driver = manualroute
+    transport = remote_smtp
+    route_data = <%= @smarthost %>
+
+begin transports
+
+remote_smtp:
+    driver = smtp
+
+begin retry
+
+* * F,1h,10m; G,4h,10m,1.1; F,6d,30m
