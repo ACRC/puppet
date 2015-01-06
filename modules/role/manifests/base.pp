@@ -1,5 +1,5 @@
 class role::base {
-    include acrc_firewall
+    include sitefirewall
     include motd
     include puppet
     include acrc_ssh

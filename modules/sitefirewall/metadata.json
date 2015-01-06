@@ -1,0 +1,17 @@
+{
+  "name": "danfoster-sitefirewall",
+  "version": "0.1.1",
+  "author": "danfoster",
+  "summary": "A module to provide the nessasary classes required by puppetlabs/firewall",
+  "license": "Apache 2.0",
+  "source": "http://github.com/danfoster/puppet-sitefirewall",
+  "project_page": "https://github.com/danfoster/puppet-sitefirewall",
+  "issues_url": "https://github.com/danfoster/puppet-sitefirewall/issues",
+  "tags": [
+    "firewall",
+    "iptables"
+  ],
+  "dependencies": [
+    {"name":"puppetlabs-firewall","version_requirement":">= 1.2.0"}
+  ]
+}

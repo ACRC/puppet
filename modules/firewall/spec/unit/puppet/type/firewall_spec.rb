@@ -208,6 +208,14 @@ describe firewall do
         @resource[iface] = 'eth1'
         @resource[iface].should == 'eth1'
       end
+      it "should accept a negated #{iface} value as a string" do
+        @resource[iface] = '! eth1'
+        @resource[iface].should == '! eth1'
+      end
+      it "should accept an interface alias for the #{iface} value as a string" do
+        @resource[iface] = 'eth1:2'
+        @resource[iface].should == 'eth1:2'
+      end
     end
   end
 
@@ -628,12 +636,13 @@ describe firewall do
         rel.target.ref.should == @resource.ref
       end
 
-      it "provider #{provider} should autorequire packages iptables and iptables-persistent" do
+      it "provider #{provider} should autorequire packages iptables, iptables-persistent, and iptables-services" do
         @resource[:provider] = provider
         @resource[:provider].should == provider
         packages = [
           Puppet::Type.type(:package).new(:name => 'iptables'),
-          Puppet::Type.type(:package).new(:name => 'iptables-persistent')
+          Puppet::Type.type(:package).new(:name => 'iptables-persistent'),
+          Puppet::Type.type(:package).new(:name => 'iptables-services')
         ]
         catalog = Puppet::Resource::Catalog.new
         catalog.add_resource @resource

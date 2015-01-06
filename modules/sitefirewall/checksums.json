@@ -1,0 +1,17 @@
+{
+  "Gemfile": "51a3882aa2fb8b4abbe7459e5ff7532c",
+  "README.md": "efeac744abe62c39d9519c2128585d70",
+  "Rakefile": "5cd70ceb337595146ca3b958a1c84f4b",
+  "manifests/init.pp": "f9ea016e6cc47e5180524fb83ee78c16",
+  "manifests/post.pp": "3795bfba06df2cde34107b30c5032f01",
+  "manifests/pre.pp": "645c4997460987310655805f24afc864",
+  "metadata.json": "d1f7380d6b6eb9c8ae4a6007baebb873",
+  "spec/acceptance/nodesets/default.yml": "c872e3cdad21aa31964fefbd021e188e",
+  "spec/acceptance/sitefirewall_spec.rb": "52a41d73e07a6ebaab90907c71af5a47",
+  "spec/classes/init_spec.rb": "c6f044e61b8424fd80262179804e1ff2",
+  "spec/classes/post_spec.rb": "7a06387f47a6684530694f7417c7b96e",
+  "spec/classes/pre_spec.rb": "16ab1a6b5325b10ab91e18ee2e162fa8",
+  "spec/spec_helper.rb": "3ea886dd135e120afa31e0aab12e85b0",
+  "spec/spec_helper_acceptance.rb": "d0543b50e8bb3193cdc23dc4d4992023",
+  "tests/init.pp": "429ad60448a02ae05d0a4f0a8f0f0506"
+}
